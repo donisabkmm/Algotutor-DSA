@@ -28,8 +28,13 @@ testcase = [{
 }]
 
 def twosum(nums,target):
-    output = [(i,i+1 )for i in range(len(nums)-1) if nums[i]+nums[i+1] == target ]
-    return output
+    hash_table = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in hash_table:
+            return [hash_table[complement], i]
+        hash_table[num] = i
+    return []
 
 for i in range(len(testcase)):
     data = testcase[i]
