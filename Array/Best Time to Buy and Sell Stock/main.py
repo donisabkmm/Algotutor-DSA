@@ -21,7 +21,7 @@ testcases = [{"prices":[7,1,5,3,6,4]},
 
 class profit:
     def max_profit(self, prices):
-        min_price = float('inf')
+        min_price = float('inf') # It converts the string infinity value to a floating infinity value.
         max_profit = 0
         for price in prices:
             if price < min_price:
